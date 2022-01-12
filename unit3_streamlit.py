@@ -78,7 +78,7 @@ else:
     
     model = load_model()
     
-    id_val = st.sidebar.selectbox("Cho0se Restaurant ID",
+    id_val = st.sidebar.selectbox("Choose Restaurant ID",
                                   df['id'].unique().tolist())
     yesterday = st.sidebar.number_input('How many visitors yesterday', min_value = 0,
                                         max_value = 100, step = 1, value = 20)
