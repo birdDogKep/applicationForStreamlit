@@ -22,8 +22,8 @@ import pickle
 
 st.title("HW #3 Deploying a Dashboard to Streamlit: Iowa Housing Data!!!")
 
-#url = r'https://github.com/birdDogKep/dat-11-15/blob/main/Homework/Unit2/data/iowa_mini.csv'
-
+url = r'https://raw.githubusercontent.com/JonathanBechtel/dat-11-15/main/Homework/Unit2/data/iowa_mini.csv'
+#r'https://raw.githubusercontent.com/birdDogKep/dat-11-15/main/Homework/Unit2/data/iowa_mini.csv'
 
 num_rows = st.sidebar.number_input('Select Number of Rows to Load', 
                                    min_value = 1000, 
@@ -38,7 +38,8 @@ section = st.sidebar.radio('Choose Application Section', ['Data Explorer',
 
 @st.cache #decorator that says if df gets called once it will never happen again - help makes things run faster: you have to have a decorator in front of each funtion.
 def load_data(num_rows):
-    df = pd.read_csv(r'/Users/lauverm/dat-11-15/Homework/Unit2/data/iowa_mini.csv', nrows = num_rows)
+    df = pd.read_csv(url, nrows = num_rows)
+    #df = pd.read_csv(r'/Users/lauverm/dat-11-15/Homework/Unit2/data/iowa_mini.csv', nrows = num_rows)
     return df
 
 @st.cache
